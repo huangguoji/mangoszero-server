@@ -32,9 +32,11 @@ jobs:
       - name: Build Mangosd Docker image
         run: |
           docker build -t mangosd-zero:latest -f dockercontainer/DockerFile-mangosd .
+          docker tag mangosd-zero:latest unentropy/mangosd-zero:latest
           docker push unentropy/mangosd-zero:latest
 
       - name: Build Realmd Docker image
         run: |
           docker build -t realmd-zero:latest -f dockercontainer/DockerFile-realmd .
+          docker tag realmd-zero:latest unentropy/realmd-zero:latest
           docker push unentropy/realmd-zero:latest
